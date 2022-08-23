@@ -3,11 +3,13 @@ import routes from "./routes";
 import mongoose from "mongoose";
 import swaggerUi from "swagger-ui-express";
 import swaggerDocs from "./swagger.json";
+import cors from "cors";
 
 require("dotenv").config();
 
 const app = express();
 
+app.use(cors());
 app.use(express.json());
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 app.use(routes);

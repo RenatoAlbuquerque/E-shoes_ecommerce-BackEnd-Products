@@ -1,0 +1,236 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "API de manipulação de produtos do E-Shoes_ecommerce",
+        "description": "Esta API tem como objetivo controlar os produtos e suas caracteristicas.",
+        "contact": {
+            "email": "renatoabreukz@gmail.com"
+        },
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:8080"
+        }
+    ],
+    "paths": {
+        "/shoes": {
+            "get": {
+                "summary": "Buscar todos os Tênis",
+                "description": "Rota responsavél por buscar os Tênis",
+                "tags": ["Shoes"],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Shoe"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/shoe": {
+            "post": {
+                "summary": "Cadastro de Tênis",
+                "description": "Rota responsavél por cadastrar um novo Tênis",
+                "tags": ["Shoes"],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Shoe"
+                            },
+                            "examples": {
+                                "shoe": {
+                                    "value": {
+                                        "model": "Nike Air Force 1 '08",
+                                        "brand": "Nike",
+                                        "url": "https://www.nike.com/t/air-force-1-07-mens-shoes-5QFp5Z/CW2288-111",
+                                        "price": 100
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "400": {
+                        "description": "Modelo já cadastrado no sistema"
+                    },
+                    "201": {
+                        "description": "OK, modelo criado!",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Shoe"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/shoes/brand": {
+            "post": {
+                "summary": "Buscar Tênis por Marca",
+                "description": "Rota responsavél por buscar Tênis por Marca",
+                "tags": ["Shoes"],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Shoe"
+                            },
+                            "examples": {
+                                "shoe": {
+                                    "value": {
+                                        "brand": "Nike"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Shoe"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/shoe/{id}": {
+            "get": {
+                "summary": "Buscar Tênis por id",
+                "description": "Rota responsavél por buscar Tênis pelo ID",
+                "tags": ["Shoes"],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id do Tênis para busca",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Shoe"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "summary": "Alterar Tênis por id",
+                "description": "Rota responsavél por Alterar Tênis pelo ID",
+                "tags": ["Shoes"],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id do Tênis para alterar",
+                        "required": true
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Shoe"
+                            },
+                            "examples": {
+                                "shoe": {
+                                    "value": {
+                                        "model": "Nike Air Force 2 '08",
+                                        "brand": "Nike",
+                                        "url": "https://www.nike.com/t/air-force-1-07-mens-shoes-5QFp5Z/CW2288-111",
+                                        "price": 80
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Shoe"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Deletar Tênis por id",
+                "description": "Rota responsavél por deletar Tênis pelo ID",
+                "tags": ["Shoes"],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id do Tênis para deletar",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Shoe"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Shoe": {
+                "type": "object",
+                "properties": {
+                    "model": {
+                        "type": "string"
+                    },
+                    "brand": {
+                        "type": "string"
+                    },
+                    "urlImage": {
+                        "type": "string"
+                    },
+                    "price": {
+                        "type": "number"
+                    }
+                }
+            }
+        }
+    }
+}
