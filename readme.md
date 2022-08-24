@@ -11,8 +11,7 @@
  <a href="#-funcionalidades">Funcionalidades</a> •
  <a href="#-testar-api-online">Testar API Online</a> • 
  <a href="#-como-executar-o-projeto">Como executar</a> • 
- <a href="#-tecnologias">Tecnologias</a> • 
- <a href="#user-content--licença">Licença</a>
+ <a href="#-tecnologias">Tecnologias</a> 
 </p>
 
 ## 💻 Sobre o projeto
