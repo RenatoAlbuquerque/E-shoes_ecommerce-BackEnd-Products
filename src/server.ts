@@ -10,9 +10,6 @@ require("dotenv").config();
 const app = express();
 
 app.use(cors());
-app.use(
-  cors({ origin: `http://localhost:${process.env.PORT}`, credentials: true })
-);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));

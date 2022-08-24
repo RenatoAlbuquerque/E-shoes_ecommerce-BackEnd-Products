@@ -10,7 +10,7 @@
   },
   "servers":[
     {
-      "url": "http://localhost:8080"
+      "url": "https://backend-products-eshoes.herokuapp.com"
     }
   ],
   "paths":{

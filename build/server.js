@@ -12,7 +12,6 @@ const cors_1 = __importDefault(require("cors"));
 require("dotenv").config();
 const app = (0, express_1.default)();
 app.use((0, cors_1.default)());
-app.use((0, cors_1.default)({ origin: "http://localhost:${process.env.PORT}", credentials: true }));
 app.use(express_1.default.json());
 app.use(express_1.default.urlencoded({ extended: true }));
 app.use("/api-docs", swagger_ui_express_1.default.serve, swagger_ui_express_1.default.setup(swagger_json_1.default));
