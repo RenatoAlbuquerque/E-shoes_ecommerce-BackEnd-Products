@@ -3,7 +3,7 @@
 </h1>
 
 <h4 align="center"> 
-	90% Concluído 🚀 🚧
+	Concluído 🚀 🚧
 </h4>
 
 <p align="center">
