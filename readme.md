@@ -54,7 +54,7 @@ Além disto é bom ter um editor para trabalhar com o código como [VSCode](http
 Para documentação e facilitar a utilização dos teste da API foi utilizado o [Swagger](https://swagger.io/), o qual a página esta disponibilizado na rota [**/api-docs**](https://backend-products-eshoes.herokuapp.com/api-docs/).
 
 <h1 align="center">
-    <img alt="PathsApi" title="#PathsApi" src="./src/assets/paths_api.png" />
+    <img alt="PathsApi" title="#PathsApi" src="./src/assets/pathsApi.png" />
 </h1>
 
 #### 🎲 Rodando o Backend (servidor)
